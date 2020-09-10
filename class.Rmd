@@ -34,12 +34,6 @@ Today's class will be based on the first chapter of the textbook, which covers h
 **Prompt:** Let's first explore the data by creating a basic histogram using `mean_age`. Use the `bins` argument to set an appropriate number of bins in your histogram, and set your range of values to ignore outliers. As always, label your plot appropriately with axis labels and a title. What does your plot tell you about the general age of Kenya's voting population? Along the way, you and your posse should do the usual data exploration: `glimpse()`, `summary()`, `sample_n()`, `view()` and so on. `xlim()` may be a useful function.
 
 
-```{r, echo=FALSE}
-ggplot(data = x, aes(mean_age)) +
-  geom_histogram(bins = 25)
-```
-
-
 
 ### Scene 2
 
