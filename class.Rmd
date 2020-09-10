@@ -33,12 +33,32 @@ Today's class will be based on the first chapter of the textbook, which covers h
 
 **Prompt:** Let's first explore the data by creating a basic histogram using `mean_age`. Use the `bins` argument to set an appropriate number of bins in your histogram, and set your range of values to ignore outliers. As always, label your plot appropriately with axis labels and a title. What does your plot tell you about the general age of Kenya's voting population? Along the way, you and your posse should do the usual data exploration: `glimpse()`, `summary()`, `sample_n()`, `view()` and so on. `xlim()` may be a useful function.
 
+```{r}
+ggplot(x, aes(x=mean_age)) +
+  geom_histogram(bins = 30, color = "white") + 
+  xlim(c(30,55)) +
+  labs(title= "Age of Voters During Electoral Administration",
+       x = "Age",
+       y = "Number of Voters")
+
+# The plot tells us that the general age of Kenya's voting population is 
+#normally distributed, with the most voters at age 42. 
+summary(x)
+```
 
 
 ### Scene 2
 
 **Prompt:** Next, let's explore the `reg_inc` variable in more detail by creating another histogram. Again, be sure to use an appropriate number of bins using the `bins` argument. You will need to re-scale the x-axis. Explore the difference between using a log scale versus a square root scale. Which one is better for this particular dataset, and why? `reg_inc` is the increase in voter registration in a community. Do you believe those outlier values? Why or why not?
 
+```{r}
+ggplot(x, aes(x=reg_inc)) + 
+geom_histogram(bins = 50, color = "pink") +
+  xlim(c(0, 1)) +
+  scale_x_log10()
+  
+  
+```
 
 ### Scene 3
 
